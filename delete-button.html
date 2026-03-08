@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Button</title>
+  </head>
+  <body>
+    <h2 id="hidden-text">This is Inner Html</h2>
+    <input type="text" id="input-text-btn" />
+    <button id="post-btn" disabled>post</button>
+
+    <script>
+      document
+        .getElementById("input-text-btn")
+        .addEventListener("keyup", function (event) {
+          const text = event.target.value;
+
+          const postBtn = document.getElementById("post-btn");
+
+          if (text === "delete") {
+            postBtn.removeAttribute("disabled");
+          } else {
+            postBtn.setAttribute("disabled", true);
+          }
+        });
+
+      document
+        .getElementById("post-btn")
+        .addEventListener("click", function () {
+          const hiddenBtn = document.getElementById("hidden-text");
+          hiddenBtn.style.display = "none";
+        });
+    </script>
+  </body>
+</html>
