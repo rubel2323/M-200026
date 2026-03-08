@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Event for JS</title>
+  </head>
+  <body>
+    <h1 onclick="console.log('hi , I am not here')">
+      This is my first DOM Event
+    </h1>
+    <button onclick="alert('Hello, I am here')">Alert button</button>
+    <button
+      title="THis is a tool Tip Message"
+      onclick="document.body.style.background = 'red'"
+    >
+      Red Button
+    </button>
+    <button onclick="document.body.style.background = 'purple'">purple</button>
+    <button onclick="pink()">pink</button>
+    <button onclick="makeGreen()">Green</button>
+    <button id="make-blue">Blue</button>
+    <button id="make-yellow">Yellow</button>
+
+    <script src="event.js"></script>
+    <script>
+      function pink() {
+        document.body.style.background = "pink";
+      }
+    </script>
+  </body>
+</html>
