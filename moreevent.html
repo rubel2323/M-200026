@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More Event Js</title>
+  </head>
+  <body>
+    <h2 id="heading">More Event JS Added</h2>
+
+    <button id="input-post">Post</button>
+    <input id="input-area" type="text" />
+    <script>
+      const input = document
+        .getElementById("input-area")
+        .addEventListener("keyup", function (display) {
+          const h2 = document.getElementById("heading");
+          h2.innerText = display.target.value;
+        });
+    </script>
+  </body>
+</html>
