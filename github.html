@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github-Like Delete button</title>
+  </head>
+  <body>
+    <h3 id="hidden-text">The Text Will be hidden</h3>
+    <input type="text" id="input-btn" placeholder="Write Delete to confirm" />
+    <button id="deleteBtn" disabled>Delete</button>
+
+    <script>
+      document
+        .getElementById("input-btn")
+        .addEventListener("keyup", function (event) {
+          const text = event.target.value;
+          const deleBtn = document.getElementById("deleteBtn");
+
+          if (text === "delete") {
+            deleBtn.removeAttribute("disabled");
+          } else {
+            deleBtn.setAttribute("disabled", true);
+          }
+        });
+
+      document
+        .getElementById("deleteBtn")
+        .addEventListener("click", function () {
+          const hideText = document.getElementById("hidden-text");
+
+          hideText.style.display = "none";
+        });
+    </script>
+  </body>
+</html>
