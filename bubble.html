@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble Propagation</title>
+  </head>
+  <body>
+    <h1>This is bubble and has stop Propagation</h1>
+    <section id="container">
+      <ul id="ul-list">
+        <li id="item-1">item-1</li>
+        <li id="item-2">item-2</li>
+        <li id="item-3">item-3</li>
+        <br />
+        <br />
+        <li id="item-4">item-4</li>
+
+        <br />
+        <br />
+        <li id="item-5">item-5</li>
+        <li id="item-6">item-6</li>
+      </ul>
+    </section>
+
+    <script>
+      document
+        .getElementById("item-4")
+        .addEventListener("click", function (event) {
+          console.log("item-4 clicked");
+          event.stopImmediatePropagation();
+        });
+      document
+        .getElementById("item-4")
+        .addEventListener("click", function (event) {
+          console.log("item-444 clicked");
+        });
+      document
+        .getElementById("item-4")
+        .addEventListener("click", function (event) {
+          console.log("item-44444 clicked");
+        });
+
+      document.getElementById("ul-list").addEventListener("click", function () {
+        console.log("ul list clicked");
+      });
+      document
+        .getElementById("container")
+        .addEventListener("click", function () {
+          console.log("container clicked");
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delegate</title>
+  </head>
+  <body>
+    <section>
+      <h3>This is ul list listed here-</h3>
+      <ul id="ul-list" class="item">
+        <li id="li-1">list-1</li>
+        <li id="li-2">list-2</li>
+        <li id="li-3">list-3</li>
+        <li id="li-4">list-4</li>
+        <li id="li-5">list-5</li>
+      </ul>
+      <button id="add-btn">Add Button</button>
+    </section>
+    <script>
+      document.getElementById("add-btn").addEventListener("click", function () {
+        const ulAddition = document.getElementById("ul-list");
+        const li = document.createElement("li");
+
+        li.innerText = "Have a nice day";
+        li.classList.add("item");
+        ulAddition.appendChild(li);
+      });
+
+      document
+        .getElementById("ul-list")
+        .addEventListener("click", function (event) {
+          event.target.parentNode.removeChild(event.target);
+        });
+    </script>
+  </body>
+</html>
